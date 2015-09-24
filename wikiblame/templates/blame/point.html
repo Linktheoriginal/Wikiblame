@@ -1,0 +1,13 @@
+{% extends "blame/base.html" %}
+
+{% block content %}
+
+<form action="{% url 'blame:finger' %}" method="get">
+	Page Title to Search: <input type="text" name="page" id="page"/> <-- this takes an EXACT wiki pagename- make sure you have the namespace and capitalization correct!<br/>
+	Text to Search For: <input type="text" name="text" id="text"/> <-- this searches raw wikitext- markup, capitalization, and punctuation matter!<br/>
+	<p>You may want to get a cup of coffee and chill out while this runs.<br/>
+	It can run up to 5000 revisions.</p>
+	<input type="submit" value="Point Finger">
+</form>
+
+{% endblock %}

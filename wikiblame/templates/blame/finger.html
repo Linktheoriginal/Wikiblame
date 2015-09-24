@@ -1,0 +1,15 @@
+{% extends "blame/base.html" %}
+
+{% block content %}
+
+{% if change_list %}
+    <ul>
+    {% for change in change_list %}
+        <li>{{ change.changetype }} by {{ change.user }} in revision {{ change.revision }}: <a href="{{ change.link }}">Link</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Did not find text in any revision of this page.</p>
+{% endif %}
+
+{% endblock %}
